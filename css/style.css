@@ -6,6 +6,7 @@ body{
 /*Header*/
 #header{
     position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -41,9 +42,25 @@ body{
     border-radius: 30px;
     
 }
+#inner-nav-bar li{ 
+    display: flex;
+    border: solid 2px white;
+    padding: 5px;
+}
+#inner-nav-bar li:hover{ 
+    border-color: #00ace6;
+    border-radius: 30px;
+}
 
 /*Content*/
 #content{
+    margin-top: 80px;
+}
+#shop-now{
+    height: 600px;
+    background-color: blanchedalmond;
+    margin-bottom: 20px;
+    overflow-y: hidden;
 }
 .section-name{
     height: 600px;
