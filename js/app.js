@@ -6,6 +6,7 @@ let navClasses = document.querySelectorAll('.section-name');
 navClasses.forEach(function(navClass){
     let newLi = document.createElement("li");
     let newA = document.createElement("a");
+    newA.setAttribute("href",`#${navClass.id}`)
     newA.textContent = navClass.firstElementChild.textContent;
     newLi.appendChild(newA);
     docFragment.appendChild(newLi);
