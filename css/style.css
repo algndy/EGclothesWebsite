@@ -6,7 +6,6 @@ body{
 /*Header*/
 #header{
     position: fixed;
-    top: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -32,6 +31,7 @@ body{
 }
 #inner-nav-bar li a{
     text-decoration:none;
+    cursor: pointer;
     color: black; 
     border: solid 2px white;
     padding: 5px;
@@ -44,7 +44,6 @@ body{
 
 /*Content*/
 #content{
-    margin-top: 72px;
 }
 .section-name{
     height: 600px;
