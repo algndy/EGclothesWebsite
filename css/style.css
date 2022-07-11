@@ -47,10 +47,7 @@ body{
     border: solid 2px white;
     padding: 5px;
 }
-#inner-nav-bar li:hover{ 
-    border-color: #00ace6;
-    border-radius: 30px;
-}
+
 
 /*Content*/
 #content{
@@ -60,12 +57,13 @@ body{
 #shop-now{
     height: 600px;
     margin-bottom: 20px;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 .section-name{
     height: 600px;
     background-color: blanchedalmond;
-    overflow-y: hidden;
+   
+    
 }
 .main-video{
     position: absolute;

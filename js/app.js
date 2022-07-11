@@ -61,7 +61,7 @@ setTimeout(function(){
 
 if(window.outerWidth<=975)
 {   
-    let categoryDiv = document.querySelector('#categories');
+    let categoryDiv = document.querySelector('#categories-slide');
     function moveItemFromRightToLeft(elem,duration){
         elem.style.cssText = `position:relative; left:${elem.offsetWidth}px;transition: left ${duration}s;`;
         
@@ -74,11 +74,12 @@ if(window.outerWidth<=975)
 }
 else if(window.outerWidth>974)
 {
-    let categoryDiv = document.querySelector('#categories');
+    let categoryDiv = document.querySelector('#categories-slide');
     function moveItemFromRightToLeft(elem,duration)
     {
         elem.style.cssText = `position:relative; left:${elem.offsetWidth}px;transition: left ${duration}s;`;
-        window.addEventListener("scroll",function(){
+        window.addEventListener("scroll",function(eve){
+            eve.preventDefault();
             if(window.scrollY >= elem.offsetTop-550)
             {
                 //console.log(`${window.scrollY} , ${elem.offsetTop} `)
