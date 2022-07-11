@@ -59,17 +59,20 @@ setTimeout(function(){
 
 //function for move element from outer page right to inner page left
 
-if(window.innerWidth<=975)
+if(window.outerWidth<=975)
 {   
     let categoryDiv = document.querySelector('#categories');
     function moveItemFromRightToLeft(elem,duration){
         elem.style.cssText = `position:relative; left:${elem.offsetWidth}px;transition: left ${duration}s;`;
-        elem.style.left="0px";   
+        
+        setTimeout(function(){
+            elem.style.left="0px"; 
+        },1)  
     }
     moveItemFromRightToLeft(categoryDiv,1);
     
 }
-else if(window.innerWidth>974)
+else if(window.outerWidth>974)
 {
     let categoryDiv = document.querySelector('#categories');
     function moveItemFromRightToLeft(elem,duration)
