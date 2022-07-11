@@ -58,18 +58,35 @@ setTimeout(function(){
 
 
 //function for move element from outer page right to inner page left
-let categoryDiv = document.querySelector('#categories');
-function moveItemFromRightToLeft(elem,duration)
-{
-    elem.style.cssText = `position:relative; left:${elem.offsetWidth}px;transition: left ${duration}s;`;
-    window.addEventListener("scroll",function(){
-        if(window.scrollY >= elem.offsetTop-550)
-        {
-            //console.log(`${window.scrollY} , ${elem.offsetTop} `)
+
+if(window.innerWidth<=974)
+{   
+    let categoryDiv = document.querySelector('#categories');
+    function moveItemFromRightToLeft(elem,duration){
+        elem.style.cssText = `position:relative; left:${elem.offsetWidth}px;transition: left ${duration}s;`;
+        setTimeout(function(){
             elem.style.left="0px";
-        }
-    });
+        },1)
+        
+    }
+    moveItemFromRightToLeft(categoryDiv,1);
+    
+}
+else if(window.innerWidth>974)
+{
+    let categoryDiv = document.querySelector('#categories');
+    function moveItemFromRightToLeft(elem,duration)
+    {
+        elem.style.cssText = `position:relative; left:${elem.offsetWidth}px;transition: left ${duration}s;`;
+        window.addEventListener("scroll",function(){
+            if(window.scrollY >= elem.offsetTop-550)
+            {
+                //console.log(`${window.scrollY} , ${elem.offsetTop} `)
+                elem.style.left="0px";
+            }
+        });
+    }
+    moveItemFromRightToLeft(categoryDiv,1);    
 }
 
-moveItemFromRightToLeft(categoryDiv,1);
 
