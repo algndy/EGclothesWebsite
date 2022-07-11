@@ -58,14 +58,12 @@ body{
 }
 #shop-now{
     height: 600px;
-    background-color: blanchedalmond;
     margin-bottom: 20px;
     overflow-y: hidden;
 }
 .section-name{
     height: 600px;
     background-color: blanchedalmond;
-    margin-bottom: 20px;
     overflow-y: hidden;
 }
 .main-video{
@@ -111,6 +109,13 @@ body{
     background-color: red;
     color: white;
     box-shadow: 0px 0px 19px #b7591f;
+}
+#categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 600px;
+    background-color: white;
 }
 
 .paragraph-befor-category{
@@ -216,6 +221,9 @@ body{
 
 /*Media*/
 @media screen and (max-width:1263px) {
+    #categories{
+        height: 500px;
+    }
     .Category-photo-women{
         width: 246px;
         height: 246px;
@@ -238,6 +246,9 @@ body{
     }
     .header-logo{
         width: 200px;
+    }
+    #categories{
+        height: 400px;
     }
     
 }
