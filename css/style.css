@@ -50,6 +50,11 @@ body{
 
 
 /*Content*/
+hr{
+    text-align: center;
+    width:50%;
+    color: black;
+}
 #content{
     overflow: hidden;
     margin-top: 76px;
@@ -115,6 +120,7 @@ body{
     justify-content: center;
     height: 600px;
     background-color: white;
+    height: 540px;
 }
 
 .paragraph-befor-category{
@@ -124,6 +130,7 @@ body{
     color:black;
     font: normal bold 2vw 'Roboto Slab', serif;
     letter-spacing:0;
+    margin-top: 0;
 }
 .logo-before-category{
     color:#00ace6;
