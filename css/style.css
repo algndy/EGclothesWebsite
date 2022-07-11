@@ -54,6 +54,7 @@ body{
 
 /*Content*/
 #content{
+    overflow: hidden;
     margin-top: 76px;
 }
 #shop-now{
@@ -126,12 +127,19 @@ body{
     font: normal bold 2vw 'Roboto Slab', serif;
     letter-spacing:0;
 }
+.logo-before-category{
+    color:#00ace6;
+    font-family:Broadway;
+    font-size:2.5vw;
+    padding: 0px 6px;
+}
 .Category-photo{
     display: flex;
     justify-content: space-evenly;
 }
 
 .Category-photo-women{
+    border: solid 2px white;
     background-image: url(../images/women.png);
     background-repeat: no-repeat;
     background-size: 85%;
@@ -146,6 +154,7 @@ body{
     border: solid 2px #00ace6;
 }
 .Category-photo-men{
+    border: solid 2px white;
     background-image: url(../images/men.png);
     background-repeat: no-repeat;
     background-size: 53%;
@@ -160,6 +169,7 @@ body{
     border: solid 2px #00ace6;
 }
 .Category-photo-kids{
+    border: solid 2px white;
     background-image: url(../images/children1.png);
     background-repeat: no-repeat;
     background-size: 114%;
@@ -249,6 +259,9 @@ body{
     }
     #categories{
         height: 400px;
+    }
+    .paragraph-befor-category {
+        font-size: 3vm;
     }
     
 }
