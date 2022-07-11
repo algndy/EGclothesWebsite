@@ -34,7 +34,7 @@ body{
     text-decoration:none;
     cursor: pointer;
     color: black; 
-    border: solid 2px white;
+   // border: solid 2px white;
     padding: 5px;
 }
 #inner-nav-bar li a:hover{
@@ -111,4 +111,133 @@ body{
     background-color: red;
     color: white;
     box-shadow: 0px 0px 19px #b7591f;
+}
+
+.paragraph-befor-category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    font: normal bold 2vw 'Roboto Slab', serif;
+    letter-spacing:0;
+}
+.Category-photo{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Category-photo-women{
+    background-image: url(../images/women.png);
+    background-repeat: no-repeat;
+    background-size: 85%;
+    width: 360px;
+    height: 330px;
+    border-radius: 50%;
+    background-position: center ;
+    transition: transform 600ms;
+}
+.Category-photo-women:hover{
+    transform: scale(1.1);
+    border: solid 2px #00ace6;
+}
+.Category-photo-men{
+    background-image: url(../images/men.png);
+    background-repeat: no-repeat;
+    background-size: 53%;
+    width: 360px;
+    height: 330px;
+    border-radius: 50%;
+    background-position: center ; 
+    transition: transform 600ms;
+}
+.Category-photo-men:hover{
+    transform: scale(1.1);
+    border: solid 2px #00ace6;
+}
+.Category-photo-kids{
+    background-image: url(../images/children1.png);
+    background-repeat: no-repeat;
+    background-size: 114%;
+    width: 360px;
+    height: 330px;
+    border-radius: 50%;
+    background-position: center ; 
+    transition: transform 600ms;
+}
+.Category-photo-kids:hover{
+    transform: scale(1.1);
+    border: solid 2px #00ace6;
+}
+.category-paragraph{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 20px;
+    
+}
+.category-link{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+.category-paragraph .women{
+    padding: 10px;
+    font: normal bold 30px 'Roboto Slab', serif;
+    border: solid 2px black;
+    border-radius: 30px;
+    transition: transform 300ms;
+}
+.category-paragraph .women:hover{
+    transform: scale(1.1);
+    border-color: #00ace6;
+}
+.category-paragraph .men{
+    padding: 10px;
+    font: normal bold 30px 'Roboto Slab', serif;
+    border: solid 2px black;
+    border-radius: 30px;
+    transition: transform 300ms;
+}
+.category-paragraph .men:hover{
+    transform: scale(1.1);
+    border-color: #00ace6;
+}
+.category-paragraph .kids{
+    padding: 10px;
+    font: normal bold 30px 'Roboto Slab', serif;
+    border: solid 2px black;
+    border-radius: 30px;
+    transition: transform 300ms;
+}
+.category-paragraph .kids:hover{
+    transform: scale(1.1);
+    border-color: #00ace6;
+}
+
+/*Media*/
+@media screen and (max-width:1263px) {
+    .Category-photo-women{
+        width: 246px;
+        height: 246px;
+    }
+    .Category-photo-men{
+        width: 246px;
+        height: 246px;
+    }
+    .Category-photo-kids{
+        width: 246px;
+        height: 246px;
+    }
+}
+@media screen and (max-width:974px) {
+    #header{
+        height: 66px;
+    }
+    #inner-nav-bar li a{
+        font-size: 20px;
+    }
+    .header-logo{
+        width: 200px;
+    }
+    
 }

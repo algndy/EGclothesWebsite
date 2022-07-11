@@ -37,6 +37,7 @@ navClasses.forEach(function(elm,ind){
                    navBarElem[i].style.borderColor="white";
                });
                 navClasses[ind].classList.add("active");
+                navBarElem[ind].style.border="solid 1px";
                 navBarElem[ind].style.borderColor="#00ace6";
                 navBarElem[ind].style.borderRadius="30px";
             }
