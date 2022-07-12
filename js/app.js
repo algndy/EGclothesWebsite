@@ -51,6 +51,30 @@ navClasses.forEach(function(elm,ind){
             }
     });
 });
+document.addEventListener('touchstart',function(eve){
+    navClasses.forEach(function(elem,ind){
+        if(eve.touches[0].pageY>= navClasses[ind].offsetTop 
+           && eve.touches[0].pageY<= navClasses[ind].offsetTop+navClasses[ind].offsetHeight)
+            {
+                navClasses.forEach(function(elem,i){
+                    if(navClasses[i].classList.contains("active"))
+                    {
+                       navClasses[i].classList.remove("active");
+                       navBarElem[i].style.borderColor="white";
+                    }   
+                });
+                if(!(navClasses[ind].classList.contains("active")))
+                {
+                    navClasses[ind].classList.add("active");
+                    navBarElem[ind].style.border="solid 1px";
+                    navBarElem[ind].style.borderColor="#00ace6";
+                    navBarElem[ind].style.borderRadius="30px";
+                }
+            }
+        
+    });
+});
+
 
 
 //Make the logo on the video appears with special style
