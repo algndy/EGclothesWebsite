@@ -147,7 +147,7 @@ hr{
     border: solid 2px white;
     background-image: url(../images/women.png);
     background-repeat: no-repeat;
-    background-size: 85%;
+    background-size: 81%;
     width: 360px;
     height: 330px;
     border-radius: 50%;
@@ -237,7 +237,7 @@ hr{
 /*Media*/
 @media screen and (max-width:1263px) {
     #categories{
-        height: 500px;
+        height: 410px;
     }
     .Category-photo-women{
         width: 246px;

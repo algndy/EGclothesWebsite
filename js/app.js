@@ -20,6 +20,7 @@ navBarElem.forEach(function(elem,ind){
     navBarElem[ind].addEventListener('click',function(event){
         event.preventDefault();
         navClasses[ind].scrollIntoView({behavior:"smooth",block:"center"});
+        
     });
 });
 
@@ -30,17 +31,23 @@ Determine which section is being viewed while scrolling through the page.
 navBarElem[0].style.cssText+="border:solid 1px #00ace6;border-radius:30px";
 navClasses.forEach(function(elm,ind){
     document.addEventListener('scroll',function(){
-    let scrollPos = document.documentElement.scrollTop;
-        if(scrollPos >= navClasses[ind].offsetTop-navElement.parentElement.offsetHeight-150 && scrollPos <= navClasses[ind].offsetTop+navClasses[ind].offsetHeight)
+        if(window.scrollY >= navClasses[ind].offsetTop-navElement.parentElement.offsetHeight-150 
+           && window.scrollY <= navClasses[ind].offsetTop+navClasses[ind].offsetHeight-500)
             {
-               navClasses.forEach(function(elem,i){
-                   navClasses[i].classList.remove("active");
-                   navBarElem[i].style.borderColor="white";
-               });
-                navClasses[ind].classList.add("active");
-                navBarElem[ind].style.border="solid 1px";
-                navBarElem[ind].style.borderColor="#00ace6";
-                navBarElem[ind].style.borderRadius="30px";
+                navClasses.forEach(function(elem,i){
+                    if(navClasses[i].classList.contains("active"))
+                    {
+                       navClasses[i].classList.remove("active");
+                       navBarElem[i].style.borderColor="white";
+                    }   
+                });
+                if(!(navClasses[ind].classList.contains("active")))
+                {
+                    navClasses[ind].classList.add("active");
+                    navBarElem[ind].style.border="solid 1px";
+                    navBarElem[ind].style.borderColor="#00ace6";
+                    navBarElem[ind].style.borderRadius="30px";
+                }
             }
     });
 });
@@ -52,7 +59,7 @@ setTimeout(function(){
     logoOnVideo.style.cssText=`position:relative;opacity:0;top:30px;`;
     setTimeout(function(){
         logoOnVideo.style.cssText+=`transition:top 1s,opacity 2s;opacity:1;top:0;`;
-    },300);
+    },1);
 },0);
 
 
@@ -80,9 +87,8 @@ else if(window.outerWidth>974)
         elem.style.cssText = `position:relative; left:${elem.offsetWidth}px;transition: left ${duration}s;`;
         window.addEventListener("scroll",function(eve){
             eve.preventDefault();
-            if(window.scrollY >= elem.offsetTop-550)
+            if(window.scrollY >= elem.offsetTop-650)
             {
-                //console.log(`${window.scrollY} , ${elem.offsetTop} `)
                 elem.style.left="0px";
             }
         });
