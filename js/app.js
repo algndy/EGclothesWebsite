@@ -14,67 +14,35 @@ navClasses.forEach(function(navClass){
 navElement.appendChild(docFragment);
 
 
+
+/*
+Set the active section.
+Determine which section is being viewed while scrolling through the page.
+*/
+navClasses.forEach(function(elm,ind){
+    document.addEventListener('scroll',function(){
+        if(window.scrollY >= navClasses[ind].offsetTop-navElement.parentElement.offsetHeight-150 
+           && window.scrollY <= navClasses[ind].offsetTop+navClasses[ind].offsetHeight-500)
+            {    
+                navClasses[ind].classList.add("active");  
+            }
+        else
+            {
+                navClasses[ind].classList.remove("active");
+            }
+    });
+});
+
+
 //Clicking an item from the navigation menu, the link scroll to the appropriate section.
 let navBarElem = document.querySelectorAll('#inner-nav-bar li a');
 navBarElem.forEach(function(elem,ind){
     navBarElem[ind].addEventListener('click',function(event){
         event.preventDefault();
         navClasses[ind].scrollIntoView({behavior:"smooth",block:"center"});
-        
+            
     });
 });
-
-/*
-Set the active section.
-Determine which section is being viewed while scrolling through the page.
-*/
-navBarElem[0].style.cssText+="border:solid 1px #00ace6;border-radius:30px";
-navClasses.forEach(function(elm,ind){
-    document.addEventListener('scroll',function(){
-        if(window.scrollY >= navClasses[ind].offsetTop-navElement.parentElement.offsetHeight-150 
-           && window.scrollY <= navClasses[ind].offsetTop+navClasses[ind].offsetHeight-500)
-            {
-                navClasses.forEach(function(elem,i){
-                    if(navClasses[i].classList.contains("active"))
-                    {
-                       navClasses[i].classList.remove("active");
-                       navBarElem[i].style.borderColor="white";
-                    }   
-                });
-                if(!(navClasses[ind].classList.contains("active")))
-                {
-                    navClasses[ind].classList.add("active");
-                    navBarElem[ind].style.border="solid 1px";
-                    navBarElem[ind].style.borderColor="#00ace6";
-                    navBarElem[ind].style.borderRadius="30px";
-                }
-            }
-    });
-});
-document.addEventListener('touchstart',function(eve){
-    navClasses.forEach(function(elem,ind){
-        if(eve.touches[0].pageY>= navClasses[ind].offsetTop 
-           && eve.touches[0].pageY<= navClasses[ind].offsetTop+navClasses[ind].offsetHeight)
-            {
-                navClasses.forEach(function(elem,i){
-                    if(navClasses[i].classList.contains("active"))
-                    {
-                       navClasses[i].classList.remove("active");
-                       navBarElem[i].style.borderColor="white";
-                    }   
-                });
-                if(!(navClasses[ind].classList.contains("active")))
-                {
-                    navClasses[ind].classList.add("active");
-                    navBarElem[ind].style.border="solid 1px";
-                    navBarElem[ind].style.borderColor="#00ace6";
-                    navBarElem[ind].style.borderRadius="30px";
-                }
-            }
-        
-    });
-});
-
 
 
 //Make the logo on the video appears with special style

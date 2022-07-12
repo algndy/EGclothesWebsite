@@ -25,29 +25,23 @@ body{
     flex-direction: row;
 }
 #inner-nav-bar li{
-    padding-left: 5px;
-    margin-left: 30px;
+    display: flex;
+    border: solid 2px white;
+    padding: 5px;
     font-size: 25px;
-    
+    margin-left: 30px;
 }
 #inner-nav-bar li a{
     text-decoration:none;
     cursor: pointer;
     color: black; 
-   // border: solid 2px white;
     padding: 5px;
+    border: solid 2px white;
 }
 #inner-nav-bar li a:hover{
-    border-color: #00ace6;
-    border-radius: 30px;
-    
+    border: solid 2px #00ace6;
+    border-radius: 30px;  
 }
-#inner-nav-bar li{ 
-    display: flex;
-    border: solid 2px white;
-    padding: 5px;
-}
-
 
 /*Content*/
 hr{
