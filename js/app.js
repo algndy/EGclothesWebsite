@@ -103,6 +103,7 @@ if(window.outerWidth<780 && window.outerWidth>=560 && window.scrollY>120)
         headerLogo.style.display = "block";
     }
 });
+
 window.addEventListener('resize',function(){
     let headerLogo = document.querySelector('.header-logo');
 if(window.outerWidth<780 && window.outerWidth>=560 && window.scrollY>120)
