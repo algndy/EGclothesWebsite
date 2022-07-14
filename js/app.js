@@ -2,7 +2,7 @@
 let navElement = document.querySelector('#inner-nav-bar');
 let docFragment = document.createDocumentFragment();
 let navClasses = document.querySelectorAll('.section-name');
-
+let hamburger = document.querySelector('.hamburger');
 //Fill in nav bar with <li> elements
 navClasses.forEach(function(navClass){
     let newLi = document.createElement("li");
@@ -12,6 +12,11 @@ navClasses.forEach(function(navClass){
     docFragment.appendChild(newLi);
 });
 navElement.appendChild(docFragment);
+
+hamburger.addEventListener('click',function(){
+    navElement.classList.toggle("active-nav");
+});
+    
 
 
 
@@ -87,5 +92,25 @@ else if(window.outerWidth>974)
     }
     moveItemFromRightToLeft(categoryDiv,1);    
 }
-
-
+window.addEventListener('scroll',function(){
+    let headerLogo = document.querySelector('.header-logo');
+if(window.outerWidth<780 && window.outerWidth>=560 && window.scrollY>120)
+    {
+        headerLogo.style.display = "none";
+    }
+    else
+    {
+        headerLogo.style.display = "block";
+    }
+});
+window.addEventListener('resize',function(){
+    let headerLogo = document.querySelector('.header-logo');
+if(window.outerWidth<780 && window.outerWidth>=560 && window.scrollY>120)
+    {
+        headerLogo.style.display = "none";
+    }
+    else
+    {
+        headerLogo.style.display = "block";
+    }
+});

@@ -43,6 +43,20 @@ body{
     border-radius: 30px;  
 }
 
+.hamburger{
+    display: none;
+    position: absolute;
+    right: 10px;
+}
+
+.line{
+    background: black;
+    width:30px;
+    height:3px;
+    margin: 6px 0;
+    
+}
+
 /*Content*/
 hr{
     text-align: center;
@@ -132,12 +146,13 @@ hr{
     font-size:2.5vw;
     padding: 0px 6px;
 }
-.Category-photo{
+
+.category-photo{
     display: flex;
     justify-content: space-evenly;
 }
 
-.Category-photo-women{
+.category-photo-women{
     border: solid 2px white;
     background-image: url(../images/women.png);
     background-repeat: no-repeat;
@@ -148,11 +163,11 @@ hr{
     background-position: center ;
     transition: transform 600ms;
 }
-.Category-photo-women:hover{
+.category-photo-women:hover{
     transform: scale(1.1);
     border: solid 2px #00ace6;
 }
-.Category-photo-men{
+.category-photo-men{
     border: solid 2px white;
     background-image: url(../images/men.png);
     background-repeat: no-repeat;
@@ -163,11 +178,11 @@ hr{
     background-position: center ; 
     transition: transform 600ms;
 }
-.Category-photo-men:hover{
+.category-photo-men:hover{
     transform: scale(1.1);
     border: solid 2px #00ace6;
 }
-.Category-photo-kids{
+.category-photo-kids{
     border: solid 2px white;
     background-image: url(../images/children1.png);
     background-repeat: no-repeat;
@@ -178,7 +193,7 @@ hr{
     background-position: center ; 
     transition: transform 600ms;
 }
-.Category-photo-kids:hover{
+.category-photo-kids:hover{
     transform: scale(1.1);
     border: solid 2px #00ace6;
 }
@@ -233,15 +248,15 @@ hr{
     #categories{
         height: 410px;
     }
-    .Category-photo-women{
+    .category-photo-women{
         width: 246px;
         height: 246px;
     }
-    .Category-photo-men{
+    .category-photo-men{
         width: 246px;
         height: 246px;
     }
-    .Category-photo-kids{
+    .category-photo-kids{
         width: 246px;
         height: 246px;
     }
@@ -260,7 +275,139 @@ hr{
         height: 400px;
     }
     .paragraph-befor-category {
-        font-size: 3vm;
+        font-size: 3vw;
+    }
+    .logo-before-category{
+        font-size: 3vw;
+    }
+    
+    
+}
+@media screen and (max-width:860px){
+    #categories{
+        height: auto;
+    }
+    .category-photo-and-paragraph
+    {
+        display: flex;
+        flex-direction: row;
+        padding:10px;
+    }
+    .category-photo{
+        flex-direction: column;
+        width: 60%;
+        align-items: center;
+    }
+    .category-paragraph{
+        flex-direction: column;
+        width:20%;
+        align-items: center;
+    }
+    .category-paragraph .women{
+        text-align: center
+    }
+    .category-paragraph .men{
+        text-align: center
+    }
+    .category-paragraph .kids{
+        text-align: center
+    }
+}
+@media screen and (max-width:780px){
+    #header{
+        flex-direction: column;
+        height: auto;
+    }
+    #inner-nav-bar{
+        margin: 0;
+        padding: 0;
+    }
+    .category-photo-and-paragraph{
+        display: flex;
+        flex-direction: row;
+        gap:10%;
+    }
+}
+
+@media screen and (max-width:560px){
+    #header{
+        flex-direction: row;
+    }
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+    
+    #inner-nav-bar{
+        height: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        top:47px;
+        align-items: center;
+        transition: 1s;
+        overflow: hidden;
+    }
+   #inner-nav-bar.active-nav{
+        height: 250px;
+    }
+    #inner-nav-bar li{
+        margin-left:0;
+        margin-bottom: 10px;
+    }
+    #content{
+        margin: 0;
+    }
+    .text-on-video h1 {
+        font-size: 16vw;
+    }
+    .text-on-video p {
+        font-size: 8vw;
+    }
+    .paragraph-befor-category {
+        font-size: 4vw;
+    }
+    .logo-before-category{
+        font-size: 4vw;
+    }
+    .category-photo-women {
+        width: 52vw;
+        height: 52vw;
+    }
+    .category-photo-men {
+        width: 52vw;
+        height: 52vw;
+    }
+    .category-photo-kids {
+        width: 52vw;
+        height: 52vw;
+    }
+    .category-paragraph .women{
+        font-size: 4vw;
+    }
+    .category-paragraph .men{
+        font-size: 4vw;
+    }
+    .category-paragraph .kids{
+        font-size: 4vw;
+    }
+    .category-link {
+        padding: 1vw;
+    }
+}
+
+@media screen and (max-width:360px){
+    #shop-now{
+        height: 400px;
+    }
+    #shop-now video{
+        height: 400px;
+    }
+    .text-on-video {
+        height: 441px;
     }
     
 }
+
