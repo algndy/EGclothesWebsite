@@ -122,7 +122,12 @@ let nextBtn = document.querySelector('.right-button');
 let count = 1;
 
 function cheackButton(){
-    if(count==1)
+    if(count>1 && count<slides.length)
+    {
+        nextBtn.disabled=false;
+        preBtn.disabled=false; 
+    }
+    else if(count==1)
     {
         nextBtn.disabled=true;
         preBtn.disabled=false;
