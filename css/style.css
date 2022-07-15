@@ -122,6 +122,7 @@ hr{
     color: white;
     box-shadow: 0px 0px 19px #b7591f;
 }
+                                                    /*Categories*/
 #categories{
     display: flex;
     flex-direction: column;
@@ -242,7 +243,103 @@ hr{
     transform: scale(1.1);
     border-color: #00ace6;
 }
+/*Services*/
 
+#services{
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+.slides{
+    position: absolute;
+    background: white;
+    width: 95%;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: left 1s;
+    border:1px solid #00ace6;
+    border-radius: 20px;
+}
+.e-gift-text,.complaint-text,.p-styling-text{
+    text-align: center;
+    letter-spacing: 2px;
+    font: normal normal 15px 'Roboto Slab', serif;
+    line-height: 31px;
+    
+}
+.services-title{
+    font-weight:bold;
+    font-size:30px;
+    line-height: 4;
+}
+.gift-photo{
+    position: relative;
+    top: 40px;
+    width: 65%;
+}
+.slides-and-controls{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+.pre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 270px;  
+    width: 30%;
+    height: 50px;
+    order:1;
+    text-align: center;
+    z-index: 1;
+}
+.next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 270px;
+    width: 30%;
+    height: 50px;
+    order:3;
+    text-align: center;
+    z-index: 1;
+}
+.left-button , .right-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#fff, #fff) padding-box,
+               linear-gradient(50deg, rgba(0,172,230,1) 0%, rgba(7,230,186,1) 30%, rgba(61,172,214,1) 100%) border-box;
+    border: 5px solid transparent;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    cursor: pointer;
+    font: normal normal 40px 'Monoton' ;
+    transition: transform 200ms;
+   
+}
+.left-button:hover{
+    transform: scale(1.1);
+}
+.right-button:hover{
+    transform: scale(1.1);
+}
+
+.slide-body{
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 530px;
+    order: 2;
+}
 /*Media*/
 @media screen and (max-width:1263px) {
     #categories{
@@ -259,6 +356,10 @@ hr{
     .category-photo-kids{
         width: 246px;
         height: 246px;
+    }
+    
+    .gift-photo{
+        width: ;
     }
 }
 @media screen and (max-width:974px) {
@@ -279,6 +380,9 @@ hr{
     }
     .logo-before-category{
         font-size: 3vw;
+    }
+    .gift-photo{
+        width: ;
     }
     
     
@@ -312,8 +416,11 @@ hr{
     .category-paragraph .kids{
         text-align: center
     }
+    .gift-photo{
+        width: ;
+    }
 }
-@media screen and (max-width:780px){
+@media screen and (max-width:807px){
     #header{
         flex-direction: column;
         height: auto;
@@ -327,9 +434,13 @@ hr{
         flex-direction: row;
         gap:10%;
     }
+   
+    .gift-photo{
+        width: 35vw;
+    }
 }
 
-@media screen and (max-width:560px){
+@media screen and (max-width:565px){
     #header{
         flex-direction: row;
     }
@@ -396,6 +507,10 @@ hr{
     .category-link {
         padding: 1vw;
     }
+    
+    .gift-photo{
+        width: 65%;
+    }
 }
 
 @media screen and (max-width:360px){
@@ -407,6 +522,12 @@ hr{
     }
     .text-on-video {
         height: 441px;
+    }
+    .gift-photo{
+        width: 70%;
+    }
+    .services-title{
+        font-size: 20px;
     }
     
 }
