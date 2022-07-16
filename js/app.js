@@ -1,8 +1,19 @@
 //Global Variables
+let upBtn = document.querySelector('.scroll-top');
+
 let navElement = document.querySelector('#inner-nav-bar');
 let docFragment = document.createDocumentFragment();
 let navClasses = document.querySelectorAll('.section-name');
 let hamburger = document.querySelector('.hamburger');
+
+let logoOnVideo = document.querySelector('.text-on-video .logo-on-video');
+
+let slides = [...document.querySelectorAll(".slides")];
+let preBtn = document.querySelector('.left-button');
+let nextBtn = document.querySelector('.right-button');
+let count = 1;
+
+
 //Fill in nav bar with <li> elements
 navClasses.forEach(function(navClass){
     let newLi = document.createElement("li");
@@ -51,7 +62,6 @@ navBarElem.forEach(function(elem,ind){
 
 
 //Make the logo on the video appears with special style
-let logoOnVideo = document.querySelector('.text-on-video .logo-on-video');
 setTimeout(function(){                   
     logoOnVideo.style.cssText=`position:relative;opacity:0;top:30px;`;
     setTimeout(function(){
@@ -61,8 +71,7 @@ setTimeout(function(){
 
 
 
-//function for move element from outer page right to inner page left
-
+//Function to move the element from the right side of the page to the inside of the page.
 if(window.outerWidth<=975)
 {   
     let categoryDiv = document.querySelector('#categories-slide');
@@ -92,6 +101,11 @@ else if(window.outerWidth>974)
     }
     moveItemFromRightToLeft(categoryDiv,1);    
 }
+
+
+
+
+//Hide the header logo at the beginning of the scrolling.
 window.addEventListener('scroll',function(){
     let headerLogo = document.querySelector('.header-logo');
     if(window.outerWidth<821 && window.outerWidth>579 && window.scrollY>120)
@@ -104,6 +118,8 @@ window.addEventListener('scroll',function(){
     }
 });
 
+
+//Hide the header logo at the beginning of the window resizing.
 window.addEventListener('resize',function(){
     let headerLogo = document.querySelector('.header-logo');
     if(window.outerWidth<821 && window.outerWidth>=579 && window.scrollY>120)
@@ -116,11 +132,14 @@ window.addEventListener('resize',function(){
     }
 });
 
-let slides = [...document.querySelectorAll(".slides")];
-let preBtn = document.querySelector('.left-button');
-let nextBtn = document.querySelector('.right-button');
-let count = 1;
 
+
+
+/*
+If the first slide is shown, the right button is closed.
+If the last slide is shown, the left button will be closed.
+On the contrary, the two buttons are opened.
+*/
 function cheackButton(){
     if(count>1 && count<slides.length)
     {
@@ -139,7 +158,7 @@ function cheackButton(){
     } 
 }
 
-
+//Make all the slides in the form of a train, each slide precedes the otherز
 slides.forEach(function(slide,ind){
     slides[ind].style.left= 100 *ind+"%";
 });
@@ -150,10 +169,11 @@ preBtn.addEventListener('click',function(e){
     cheackButton();
     slides.forEach(function(slide,ind){
         slides[ind].style.left=Number((slides[ind].style.left.split("%"))[0])-100 + "%";
-        
         // Number((slides[1].style.left.split("%"))[0])
     });
 });
+
+//Move between slides, either left or right
 nextBtn.addEventListener('click',function(e){
     e.preventDefault();
     count--;
@@ -165,3 +185,25 @@ nextBtn.addEventListener('click',function(e){
 cheackButton();
 
 
+
+
+/*
+Add active class to the button if the user starts to scroll.
+Show and hide the button responsible for scrolling to the top of the page. 
+*/
+window.addEventListener('scroll',function(){
+    if(window.scrollY > 150)
+    {
+        upBtn.classList.add("active-top-button");
+    }
+    else
+    {
+        upBtn.classList.remove("active-top-button");
+    }
+
+});
+
+//When the button is clicked, it will go to the top of the page.
+upBtn.addEventListener('click',function(){
+    window.scrollTo({top:0 , behavior: 'smooth'});
+});

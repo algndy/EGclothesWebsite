@@ -2,7 +2,31 @@ body{
     margin: 0px;
     padding: 0px;
 }
+.scroll-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    bottom: -50px;
+    right: 20px;
+    border: 3px solid #00ace6;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    z-index: 5;
+    background-color: white;
+    transition: 1s
+    
+}
+.scroll-top img{
+    width:22px;
+    height: 22px;
+}
 
+.active-top-button{
+    bottom: 20px;
+}
 /*Header*/
 #header{
     position: fixed;
