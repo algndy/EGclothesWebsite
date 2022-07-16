@@ -17,8 +17,8 @@ This web page is designed to be more lively, interactive and not boring, which m
 
 >## Features
 + **Responsive Design.**   
-+ **Dynamic elements.**
++ **Dynamic Elements.**
 + **Navigation bar are dynamically generated from the page sections.** 
 + **Choose the section from the navigation bar to fast scroll to the appropriate section.**
-+ **Set class to active state on the navigation items when a section is in the viewport**
++ **Set class to active state on the navigation items when a section is in the viewport.**
 
