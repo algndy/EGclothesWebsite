@@ -395,6 +395,25 @@ hr{
 }
 .footer-lists{
     line-height: 40px;
+    
+}
+.footer-text-list{
+    position: relative;
+     cursor: pointer;
+}
+.footer-text-list::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1.4px;
+    background-image: linear-gradient(50deg,rgba(0,172,230,1) , rgba(7,230,186,1) , rgba(61,172,214,1) );
+    transition: width 400ms ease-out;
+}
+.footer-text-list:hover::before{
+    width: 100%;
+    cursor: pointer;
 }
 .social-media{
     display: flex;
